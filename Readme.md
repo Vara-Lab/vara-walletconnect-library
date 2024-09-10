@@ -53,9 +53,7 @@ Before installing the library, ensure you have the following prerequisites:
 In addition to the library itself, you will need to install the following dependencies:
 
 ```bash
-# Using yarn
 yarn add @polkadot/types @talismn/connect-wallets @tanstack/react-query @web3modal/wagmi simplebar-react zustand @gear-js/api
-
 ```
 
 ### Option 2: Use the Chakra UI Vite Sails Template

@@ -55,7 +55,7 @@ In addition to the library itself, you will need to install the following depend
 yarn add @polkadot/types @talismn/connect-wallets @tanstack/react-query @web3modal/wagmi simplebar-react zustand @gear-js/api
 
 ```
-Option 2: Use the Chakra UI Vite Sails Template
+###  Option 2: Use the Chakra UI Vite Sails Template
 
 1. **Clone the template:**:
 

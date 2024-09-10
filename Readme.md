@@ -46,6 +46,8 @@ Before installing the library, ensure you have the following prerequisites:
    git clone https://github.com/Vara-Lab/vara-walletconnect-library.git
    cd vara-walletconnect-library
 
+   ```
+
 2. **Install the necessary dependencies:**:
 
 In addition to the library itself, you will need to install the following dependencies:
@@ -55,28 +57,30 @@ In addition to the library itself, you will need to install the following depend
 yarn add @polkadot/types @talismn/connect-wallets @tanstack/react-query @web3modal/wagmi simplebar-react zustand @gear-js/api
 
 ```
-###  Option 2: Use the Chakra UI Vite Sails Template
+
+### Option 2: Use the Chakra UI Vite Sails Template
 
 1. **Clone the template:**:
 
 ```bash
    git clone https://github.com/Vara-Lab/Chackra-UI-Vite-Sails-Template.git
    cd Chackra-UI-Vite-Sails-Template
- ```
+```
 
 2. **Install the necessary dependencies:**:
 
 Alternatively, you can clone and use the Chakra-UI-Vite-Sails-Template as a starting point. This template comes pre-configured with Chakra UI, Vite, and Sails, making it easy to integrate with this library.
 
- ```bash
-  yarn install
- ```
-3. **Run**: 
+```bash
+ yarn install
+```
+
+3. **Run**:
 
 ```bash
   yarn start
 
- ```
+```
 
 ## Examples
 
@@ -84,20 +88,21 @@ Alternatively, you can clone and use the Chakra-UI-Vite-Sails-Template as a star
 
 This example demonstrates how to connect a wallet using WalletConnect, sign, and send a transaction on the Vara Network. We use the useWalletConnect hook to manage the wallet connection and the useSignAndSendTransfer hook to handle signing and sending the transaction.
 
-   ```typescript
+```typescript
 import { Button } from "@/components/ui/button";
 import { useWalletConnect } from "@/app/wallet-connect/hooks/useWalletConnect";
-import { useSignAndSendMessage } from "@/app/wallet-connect/hooks/useSignAndSendMessage";
+import { useSignAndSendTransfer } from "@/app/wallet-connect/hooks/useSignAndSendTransfer";
 import { Center, VStack, Image } from "@chakra-ui/react";
 import { Heading } from "@/components/ui/heading";
 
 function Home() {
-
-   // Using the hook to connect to WalletConnect
-  const { enableWalletConnect, connected, accounts, signTransaction } = useWalletConnect();
+  // Using the hook to connect to WalletConnect
+  const { enableWalletConnect, connected, accounts, signTransaction } =
+    useWalletConnect();
 
   // Hook to sign and send a transfer
-  const { signAndSendTransfer, txHash, isSigning, error } = useSignAndSendTransfer(accounts, signTransaction);
+  const { signAndSendTransfer, txHash, isSigning, error } =
+    useSignAndSendTransfer(accounts, signTransaction);
 
   // Recipient address and amount to send
   const recipient = "kGggpCH2Rgzp5VcpBei9MS2B2PiJn9Kg92XK19mMwc7zZBcVG";
@@ -146,27 +151,31 @@ function Home() {
 }
 
 export { Home };
- ```
+```
 
 ### Send Message
 
 This example demonstrates how to send a message to a smart contract on the Vara Network using WalletConnect. The useSignAndSendMessage hook is used to sign and send the message, with all necessary details such as the payload, meta, gas limit, and value.
 
-   ```typescript
+```typescript
 import { Button } from "@/components/ui/button";
 import { useWalletConnect } from "@/app/wallet-connect/hooks/useWalletConnect";
+import { useSignAndSendMessage } from "@/app/wallet-connect/hooks/useSignAndSendMessage";
 import { Center, VStack, Image } from "@chakra-ui/react";
 import { Heading } from "@/components/ui/heading";
 
 function Home() {
- // Using the hook to connect to WalletConnect
-  const { enableWalletConnect, connected, accounts, signTransaction } = useWalletConnect();
+  // Using the hook to connect to WalletConnect
+  const { enableWalletConnect, connected, accounts, signTransaction } =
+    useWalletConnect();
 
   // Hook to sign and send a message
-  const { signAndSendSendMessage, txHash, isSigning, error } = useSignAndSendMessage(accounts, signTransaction);
+  const { signAndSendSendMessage, txHash, isSigning, error } =
+    useSignAndSendMessage(accounts, signTransaction);
 
   // Message parameters
-  const programID = "0xd5d1eb08af166ac3bb210bac52814324a0e33501edb8c57e9102e81c820c09a2"; // Contract ID
+  const programID =
+    "0xd5d1eb08af166ac3bb210bac52814324a0e33501edb8c57e9102e81c820c09a2"; // Contract ID
   const payload = "message_payload"; // Message payload
   const meta = "meta_data"; // Optional metadata
   const gasLimit = 300000; // Gas limit
@@ -175,7 +184,6 @@ function Home() {
   const sendMessage = () => {
     signAndSendSendMessage(programID, payload, meta, gasLimit, value);
   };
-
 
   return (
     <Center>
@@ -216,7 +224,7 @@ function Home() {
 }
 
 export { Home };
- ```
+```
 
 ## Contributing
 
